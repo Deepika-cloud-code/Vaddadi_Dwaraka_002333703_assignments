@@ -60,12 +60,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel30 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        txtLastName1 = new javax.swing.JTextField();
-        txtLastName2 = new javax.swing.JTextField();
-        txtFirstName1 = new javax.swing.JTextField();
-        txtFirstName2 = new javax.swing.JTextField();
+        txtCityHome = new javax.swing.JTextField();
+        txtZipCodeWork = new javax.swing.JTextField();
+        txtCityWork = new javax.swing.JTextField();
+        txtZipCodeHome = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         jLabel11.setText("First Name:");
 
@@ -140,6 +141,12 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         jLabel33.setText("Work City");
 
+        txtZipCodeWork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtZipCodeWorkActionPerformed(evt);
+            }
+        });
+
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -186,11 +193,11 @@ public class ViewJPanel extends javax.swing.JPanel {
                                         .addComponent(jLabel44)))
                                 .addGap(38, 38, 38)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFirstName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtZipCodeHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCityWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLastName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtLastName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCityHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtZipCodeWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnUpdate))))
                 .addContainerGap(76, Short.MAX_VALUE))
         );
@@ -212,7 +219,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addComponent(txtLastName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCityHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -222,11 +229,11 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(15, 15, 15)
                         .addComponent(jLabel44))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtFirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCityWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFirstName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtZipCodeHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtLastName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtZipCodeWork, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
@@ -234,19 +241,33 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        btnBack.setText("<<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(195, 195, 195)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(btnBack)))
                 .addContainerGap(239, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
+                .addGap(15, 15, 15)
+                .addComponent(btnBack)
+                .addGap(78, 78, 78)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(142, Short.MAX_VALUE))
         );
@@ -275,22 +296,20 @@ public class ViewJPanel extends javax.swing.JPanel {
        // String SSN=txtSSN.getText();
         
         String cityHome=txtCityHome.getText();
-        String stateHome=txtStateHome.getText();
-        String streetAddressHome=txtStreetAddressHome.getText();
-        String unitNumberHome=txtUnitNumberHome.getText();
-        String phoneNumberHome=txtPhoneNumberHome.getText();
-        
         String cityWork=txtCityWork.getText();
-        String stateWork=txtStateWork.getText();
-        String streetAddressWork=txtStreetAddressWork.getText();
-        String unitNumberWork=txtUnitNumberWork.getText();
-        String phoneNumberWork=txtPhoneNumberWork.getText();
+       // String streetAddressHome=txtStreetAddressHome.getText();
+       // String unitNumberHome=txtUnitNumberHome.getText();
+       // String phoneNumberHome=txtPhoneNumberHome.getText();
+        
+       // String stateWork=txtStateWork.getText();
+       // String streetAddressWork=txtStreetAddressWork.getText();
+       // String unitNumberWork=txtUnitNumberWork.getText();
+        //String phoneNumberWork=txtPhoneNumberWork.getText();
         
         
        
-        if(firstName.isBlank() || lastName.isBlank() || SSN.isBlank()|| streetAddressWork.isBlank()|| unitNumberWork.isBlank()|| cityWork.isBlank()
-                || stateWork.isBlank()|| phoneNumberWork.isBlank()|| streetAddressHome.isBlank()|| unitNumberHome.isBlank()|| cityHome.isBlank()
-                || stateHome.isBlank()|| phoneNumberHome.isBlank()){
+        if(firstName.isBlank() || lastName.isBlank() || cityWork.isBlank()
+                || cityHome.isBlank()){
             JOptionPane.showMessageDialog(this,"All fields are mandatory.","Error",JOptionPane.ERROR_MESSAGE);
             //PAUSE UNTIL THE USER CLOSES THE DIALOG.
             return;
@@ -299,23 +318,23 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         person.setFirstName(firstName);
         person.setLastName(lastName);
-        person.setSSN(SSN);
-        person.setAge(age);
-        person.setGender(gender);
+       // person.setSSN(SSN);
+        //person.setAge(age);
+        //person.setGender(gender);
         
         person.getWorkAddress().setCity(cityWork);
-        person.getWorkAddress().setState(stateWork);
-        person.getWorkAddress().setUnitNumber(unitNumberWork);
-        person.getWorkAddress().setStreetAddress(streetAddressWork);
+        //person.getWorkAddress().setState(stateWork);
+       // person.getWorkAddress().setUnitNumber(unitNumberWork);
+       // person.getWorkAddress().setStreetAddress(streetAddressWork);
         person.getWorkAddress().setZipCode(zipCodeWork);
-        person.getWorkAddress().setPhoneNumber(phoneNumberWork);
+       // person.getWorkAddress().setPhoneNumber(phoneNumberWork);
         
          person.getHomeAddress().setCity(cityHome);
-        person.getHomeAddress().setState(stateHome);
-        person.getHomeAddress().setUnitNumber(unitNumberHome);
-        person.getHomeAddress().setStreetAddress(streetAddressHome);
+       // person.getHomeAddress().setState(stateHome);
+       // person.getHomeAddress().setUnitNumber(unitNumberHome);
+       // person.getHomeAddress().setStreetAddress(streetAddressHome);
         person.getHomeAddress().setZipCode(zipCodeHome);
-        person.getHomeAddress().setPhoneNumber(phoneNumberHome);
+       // person.getHomeAddress().setPhoneNumber(phoneNumberHome);
         
         JOptionPane.showMessageDialog(null,"Profile successfully added.","WARNING",JOptionPane.WARNING_MESSAGE);
 
@@ -328,8 +347,25 @@ public class ViewJPanel extends javax.swing.JPanel {
         setEditMode();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void txtZipCodeWorkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtZipCodeWorkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtZipCodeWorkActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] panelStack=userProcessContainer.getComponents();
+        JPanel lastPanel=(JPanel) panelStack[panelStack.length-1];
+        ManagePersonJPanel manageAccountJPanel=(ManagePersonJPanel)lastPanel;
+        manageAccountJPanel.populateTable();
+
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
@@ -350,18 +386,26 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField txtCityHome;
+    private javax.swing.JTextField txtCityWork;
     private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtFirstName1;
-    private javax.swing.JTextField txtFirstName2;
     private javax.swing.JTextField txtLastName;
-    private javax.swing.JTextField txtLastName1;
-    private javax.swing.JTextField txtLastName2;
+    private javax.swing.JTextField txtZipCodeHome;
+    private javax.swing.JTextField txtZipCodeWork;
     // End of variables declaration//GEN-END:variables
 
   private void refreshTextFields() {
-         txtRoutingNumber.setText(account.getRoutingNumber());
-         txtAccountNumber.setText(account.getAccountNumber());
-         txtBankName.setText(account.getBankName());
+         txtFirstName.setText(person.getFirstName());
+         txtLastName.setText(person.getLastName());
+         txtCityHome.setText(person.getHomeAddress().getCity());
+         txtCityWork.setText(person.getWorkAddress().getCity());
+         txtZipCodeHome.setText(Long.toString(person.getHomeAddress().getZipCode()));
+         txtZipCodeWork.setText(Long.toString(person.getWorkAddress().getZipCode()));
+  }
+            
+            
+         
+         
     }
   
    private void setViewMode() {
