@@ -42,6 +42,9 @@ public class PersonDirectory {
             else if(p.getHomeAddress().getStreetAddress().equals(details)){
                 return p;
             }
+            else if(p.getWorkAddress().getStreetAddress().equals(details)){
+                return p;
+            }
           
         }
         

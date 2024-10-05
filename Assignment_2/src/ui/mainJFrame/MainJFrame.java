@@ -23,7 +23,6 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
         this.personDirectory=new PersonDirectory();
         generateDemoDate();
-
     }
 
     /**
@@ -148,40 +147,41 @@ public class MainJFrame extends javax.swing.JFrame {
          Person newPerson =personDirectory.addPerson();
         newPerson.setFirstName("Rachel");
         newPerson.setLastName("Green");
-        //newPerson.setAge(21);
-        //newPerson.setGender('F');
-       // newPerson.setSSN("784676374576");
-        
-        newPerson.getWorkAddress().setCity("Boston");
-       // newPerson.getWorkAddress().setState("MA");
+        newPerson.setAge(21);
+        newPerson.setGender('F');
+        newPerson.setSSN("784676374576");
+        newPerson.getWorkAddress().setState("MA"); 
+       newPerson.getHomeAddress().setPhoneNumber("9837765763");
+        newPerson.getWorkAddress().setPhoneNumber("1234567890");
+        newPerson.getHomeAddress().setState("MA");
         newPerson.getWorkAddress().setStreetAddress("123 tremont st");
         newPerson.getWorkAddress().setZipCode(21130L);
-       // newPerson.getWorkAddress().setPhoneNumber("1234567890");
-        
+        newPerson.getWorkAddress().setCity("Boston");
         newPerson.getHomeAddress().setCity("Boston");
-       // newPerson.getHomeAddress().setState("MA");
         newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
         newPerson.getHomeAddress().setZipCode(21340L);
-       // newPerson.getHomeAddress().setPhoneNumber("9837765763");
+         newPerson.getHomeAddress().setUnitNumber("988");
+         newPerson.getWorkAddress().setUnitNumber("110");
+       
         
-         Person NewPerson1 =personDirectory.addPerson();
-        NewPerson1.setFirstName("Monica");
-        NewPerson1.setLastName("Geller");
-        //NewPerson1.setAge(23);
-        //NewPerson1.setGender('F');
-        //NewPerson1.setSSN("284675474579");
-        
-        NewPerson1.getWorkAddress().setCity("Boston");
-       // NewPerson1.getWorkAddress().setState("MA");
-        NewPerson1.getWorkAddress().setStreetAddress("123 tremont st");
-        NewPerson1.getWorkAddress().setZipCode(21030L);
-      //  NewPerson1.getWorkAddress().setPhoneNumber("1234567890");
-        
-        NewPerson1.getHomeAddress().setCity("Boston");
-       // NewPerson1.getHomeAddress().setState("MA");
-        NewPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
-        NewPerson1.getHomeAddress().setZipCode(21350L);
-       // NewPerson1.getHomeAddress().setPhoneNumber("7637765763");
+         Person newPerson1 =personDirectory.addPerson();
+        newPerson1.setFirstName("Monica");
+        newPerson1.setLastName("Geller");
+        newPerson1.setAge(22);
+        newPerson1.setGender('F');
+       newPerson1.setSSN("62536776344576");
+        newPerson1.getWorkAddress().setState("MA"); 
+        newPerson1.getHomeAddress().setPhoneNumber("4767765763");
+         newPerson1.getWorkAddress().setPhoneNumber("09334567890");
+         newPerson1.getHomeAddress().setUnitNumber("211");
+         newPerson1.getWorkAddress().setUnitNumber("655");
+         newPerson1.getHomeAddress().setState("MA");
+        newPerson1.getWorkAddress().setCity("Boston");
+        newPerson1.getWorkAddress().setStreetAddress("123 tremont st");
+        newPerson1.getWorkAddress().setZipCode(21030L);
+        newPerson1.getHomeAddress().setCity("Boston");
+        newPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
+        newPerson1.getHomeAddress().setZipCode(21350L);
        
         Person NewPerson2 =personDirectory.addPerson();
         NewPerson2.setFirstName("Ryan");
@@ -192,6 +192,15 @@ public class MainJFrame extends javax.swing.JFrame {
         NewPerson2.getHomeAddress().setStreetAddress("890 Manhattan st");
         NewPerson2.getHomeAddress().setZipCode(11111L);
         NewPerson2.getWorkAddress().setZipCode(22222L);
+        NewPerson2.setAge(34);
+        NewPerson2.setGender('M');
+        NewPerson2.setSSN("283676374576");
+        NewPerson2.getWorkAddress().setState("MA"); 
+        NewPerson2.getHomeAddress().setPhoneNumber("2737765763");
+        NewPerson2.getWorkAddress().setPhoneNumber("7434567890");
+        NewPerson2.getHomeAddress().setState("MA");
+        NewPerson2.getHomeAddress().setUnitNumber("340");
+        NewPerson2.getWorkAddress().setUnitNumber("100");
         
         Person NewPerson3 =personDirectory.addPerson();
         NewPerson3.setFirstName("Tony");
@@ -202,6 +211,15 @@ public class MainJFrame extends javax.swing.JFrame {
         NewPerson3.getHomeAddress().setStreetAddress("567 Park st");
         NewPerson3.getHomeAddress().setZipCode(33333L);
         NewPerson3.getWorkAddress().setZipCode(44444L);
+        NewPerson3.setAge(49);
+        NewPerson3.setGender('M');
+        NewPerson3.setSSN("142342353648734");
+        NewPerson3.getWorkAddress().setState("NewYork"); 
+        NewPerson3.getHomeAddress().setPhoneNumber("9837765763");
+        NewPerson3.getWorkAddress().setPhoneNumber("1234567890");
+        NewPerson3.getHomeAddress().setState("MA");
+        NewPerson3.getHomeAddress().setUnitNumber("544");
+        NewPerson3.getWorkAddress().setUnitNumber("122");
         
         Person NewPerson4 =personDirectory.addPerson();
         NewPerson4.setFirstName("Timothee");
@@ -212,6 +230,15 @@ public class MainJFrame extends javax.swing.JFrame {
         NewPerson4.getHomeAddress().setStreetAddress("433 Park Square");
         NewPerson4.getHomeAddress().setZipCode(33333L);
         NewPerson4.getWorkAddress().setZipCode(44444L);
+       NewPerson4.setAge(27);
+       NewPerson4.setGender('M');
+       NewPerson4.setSSN("73246725656327");
+       NewPerson4.getWorkAddress().setState("SE"); 
+       NewPerson4.getHomeAddress().setPhoneNumber("67456324645");
+       NewPerson4.getWorkAddress().setPhoneNumber("89234778235");
+       NewPerson4.getHomeAddress().setState("MA");
+       NewPerson4.getHomeAddress().setUnitNumber("322");
+       NewPerson4.getWorkAddress().setUnitNumber("910");
         
     }
 }
