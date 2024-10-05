@@ -4,8 +4,10 @@
  */
 package ui.mainJFrame;
 
+import java.awt.CardLayout;
 import model.Person;
 import model.PersonDirectory;
+import ui.ProfileAreaJPanel;
 
 /**
  *
@@ -42,7 +44,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        btnManageOrCreate.setText("Manage or Create from here!!");
+        btnManageOrCreate.setText("Manage or Create Person Profile from here!!");
         btnManageOrCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageOrCreateActionPerformed(evt);
@@ -54,7 +56,7 @@ public class MainJFrame extends javax.swing.JFrame {
         topJPanelLayout.setHorizontalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topJPanelLayout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(178, Short.MAX_VALUE)
                 .addComponent(btnManageOrCreate)
                 .addGap(245, 245, 245))
         );
@@ -76,7 +78,7 @@ public class MainJFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                .addComponent(jSplitPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -89,6 +91,11 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnManageOrCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrCreateActionPerformed
         // TODO add your handling code here:
+        ProfileAreaJPanel panel= new ProfileAreaJPanel(userProcessContainer,personDirectory);
+        
+        userProcessContainer.add("ProfileAreaJPanel",panel);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
     }//GEN-LAST:event_btnManageOrCreateActionPerformed
 
     /**
@@ -138,43 +145,40 @@ public class MainJFrame extends javax.swing.JFrame {
          Person newPerson =personDirectory.addPerson();
         newPerson.setFirstName("Rachel");
         newPerson.setLastName("Green");
-        newPerson.setAge(21);
-        newPerson.setGender('F');
-        newPerson.setSSN("784676374576");
+        //newPerson.setAge(21);
+        //newPerson.setGender('F');
+       // newPerson.setSSN("784676374576");
         
         newPerson.getWorkAddress().setCity("Boston");
-        newPerson.getWorkAddress().setState("MA");
-        newPerson.getWorkAddress().setStreetAddress("123 tremont st");
+       // newPerson.getWorkAddress().setState("MA");
+       // newPerson.getWorkAddress().setStreetAddress("123 tremont st");
         newPerson.getWorkAddress().setZipCode(21130L);
-        newPerson.getWorkAddress().setPhoneNumber("1234567890");
+       // newPerson.getWorkAddress().setPhoneNumber("1234567890");
         
         newPerson.getHomeAddress().setCity("Boston");
-        newPerson.getHomeAddress().setState("MA");
-        newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
+       // newPerson.getHomeAddress().setState("MA");
+       // newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
         newPerson.getHomeAddress().setZipCode(21340L);
-        newPerson.getHomeAddress().setPhoneNumber("9837765763");
-        
-        
-        
+       // newPerson.getHomeAddress().setPhoneNumber("9837765763");
         
          Person NewPerson1 =personDirectory.addPerson();
         NewPerson1.setFirstName("Monica");
         NewPerson1.setLastName("Geller");
-        NewPerson1.setAge(23);
-        NewPerson1.setGender('F');
-        NewPerson1.setSSN("284675474579");
+        //NewPerson1.setAge(23);
+        //NewPerson1.setGender('F');
+        //NewPerson1.setSSN("284675474579");
         
         NewPerson1.getWorkAddress().setCity("Boston");
-        NewPerson1.getWorkAddress().setState("MA");
-        NewPerson1.getWorkAddress().setStreetAddress("123 tremont st");
+       // NewPerson1.getWorkAddress().setState("MA");
+        //NewPerson1.getWorkAddress().setStreetAddress("123 tremont st");
         NewPerson1.getWorkAddress().setZipCode(21030L);
-        NewPerson1.getWorkAddress().setPhoneNumber("1234567890");
+      //  NewPerson1.getWorkAddress().setPhoneNumber("1234567890");
         
         NewPerson1.getHomeAddress().setCity("Boston");
-        NewPerson1.getHomeAddress().setState("MA");
-        NewPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
+       // NewPerson1.getHomeAddress().setState("MA");
+       // NewPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
         NewPerson1.getHomeAddress().setZipCode(21350L);
-        NewPerson1.getHomeAddress().setPhoneNumber("7637765763");
+       // NewPerson1.getHomeAddress().setPhoneNumber("7637765763");
         
     }
 }

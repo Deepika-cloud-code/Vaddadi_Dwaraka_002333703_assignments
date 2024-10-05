@@ -19,8 +19,10 @@ PersonDirectory personDirectory;
     /**
      * Creates new form ProfileAreaJPanel
      */
-    public ProfileAreaJPanel() {
+    public ProfileAreaJPanel(JPanel container,PersonDirectory directory) {
         initComponents();
+        userProcessContainer=container;
+        personDirectory=directory;
     }
 
     /**

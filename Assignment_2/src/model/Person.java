@@ -15,6 +15,12 @@ public class Person{
     char gender; // to get a 'F' for female, 'M' for male and 'O' for others
     Address HomeAddress;
     Address WorkAddress;
+    
+    public Person(){
+        this.HomeAddress=new Address();
+        this.WorkAddress=new Address();
+        
+    }
 
     public Address getHomeAddress() {
         return HomeAddress;
