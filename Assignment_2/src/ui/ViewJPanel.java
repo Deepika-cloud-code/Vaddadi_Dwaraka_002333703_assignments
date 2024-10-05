@@ -403,28 +403,30 @@ public class ViewJPanel extends javax.swing.JPanel {
          txtZipCodeWork.setText(Long.toString(person.getWorkAddress().getZipCode()));
   }
             
-            
-         
-         
-    }
+
   
    private void setViewMode() {
-        txtRoutingNumber.setEnabled(false);
-        txtAccountNumber.setEnabled(false);
-        txtBankName.setEnabled(false);
+        txtFirstName.setEnabled(false);
+        txtLastName.setEnabled(false);
+        txtZipCodeHome.setEnabled(false);
+        txtZipCodeWork.setEnabled(false);
+        txtCityHome.setEnabled(false);
+        txtCityWork.setEnabled(false);
         
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
-        
-        
     }
     private void setEditMode(){
-        txtRoutingNumber.setEnabled(true);
-        txtAccountNumber.setEnabled(true);
-        txtBankName.setEnabled(true);
+         txtFirstName.setEnabled(true);
+        txtLastName.setEnabled(true);
+        txtZipCodeHome.setEnabled(true);
+        txtZipCodeWork.setEnabled(true);
+        txtCityHome.setEnabled(true);
+        txtCityWork.setEnabled(true);
         
         btnSave.setEnabled(true);
         btnUpdate.setEnabled(false);
         
     }
 }
+
