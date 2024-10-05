@@ -19,7 +19,6 @@ public class Person{
     public Person(){
         this.HomeAddress=new Address();
         this.WorkAddress=new Address();
-        
     }
 
     public Address getHomeAddress() {

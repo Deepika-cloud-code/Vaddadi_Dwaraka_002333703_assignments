@@ -33,16 +33,18 @@ public class PersonDirectory {
     
     public Person searchPerson(String details){
         for(Person p:person){
-            if (p.getFirstName().contains(details)){
+            if (p.getFirstName().equals(details)){ //changed from .contains to .equals
                 return p;
             }
-            else if(p.getLastName().contains(details)){
+            else if(p.getLastName().equals(details)){
                 return p;
             }
-            else if(p.getHomeAddress().getStreetAddress().contains(details)){
+            else if(p.getHomeAddress().getStreetAddress().equals(details)){
                 return p;
             }
+          
         }
+        
         return null;
     }
 }

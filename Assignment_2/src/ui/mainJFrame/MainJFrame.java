@@ -44,6 +44,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
+        topJPanel.setBackground(new java.awt.Color(0, 102, 102));
+
         btnManageOrCreate.setText("Manage or Create Person Profile from here!!");
         btnManageOrCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,17 +57,17 @@ public class MainJFrame extends javax.swing.JFrame {
         topJPanel.setLayout(topJPanelLayout);
         topJPanelLayout.setHorizontalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topJPanelLayout.createSequentialGroup()
-                .addContainerGap(178, Short.MAX_VALUE)
+            .addGroup(topJPanelLayout.createSequentialGroup()
+                .addGap(322, 322, 322)
                 .addComponent(btnManageOrCreate)
-                .addGap(245, 245, 245))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         topJPanelLayout.setVerticalGroup(
             topJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topJPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(33, 33, 33)
                 .addComponent(btnManageOrCreate)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         jSplitPane1.setTopComponent(topJPanel);
@@ -83,7 +85,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
 
         pack();
@@ -91,7 +93,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnManageOrCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrCreateActionPerformed
         // TODO add your handling code here:
-        ProfileAreaJPanel panel= new ProfileAreaJPanel(userProcessContainer,personDirectory);
+        ProfileAreaJPanel panel= 
+                new ProfileAreaJPanel(userProcessContainer,personDirectory);
         
         userProcessContainer.add("ProfileAreaJPanel",panel);
         CardLayout layout=(CardLayout)userProcessContainer.getLayout();
@@ -151,13 +154,13 @@ public class MainJFrame extends javax.swing.JFrame {
         
         newPerson.getWorkAddress().setCity("Boston");
        // newPerson.getWorkAddress().setState("MA");
-       // newPerson.getWorkAddress().setStreetAddress("123 tremont st");
+        newPerson.getWorkAddress().setStreetAddress("123 tremont st");
         newPerson.getWorkAddress().setZipCode(21130L);
        // newPerson.getWorkAddress().setPhoneNumber("1234567890");
         
         newPerson.getHomeAddress().setCity("Boston");
        // newPerson.getHomeAddress().setState("MA");
-       // newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
+        newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
         newPerson.getHomeAddress().setZipCode(21340L);
        // newPerson.getHomeAddress().setPhoneNumber("9837765763");
         
@@ -170,15 +173,45 @@ public class MainJFrame extends javax.swing.JFrame {
         
         NewPerson1.getWorkAddress().setCity("Boston");
        // NewPerson1.getWorkAddress().setState("MA");
-        //NewPerson1.getWorkAddress().setStreetAddress("123 tremont st");
+        NewPerson1.getWorkAddress().setStreetAddress("123 tremont st");
         NewPerson1.getWorkAddress().setZipCode(21030L);
       //  NewPerson1.getWorkAddress().setPhoneNumber("1234567890");
         
         NewPerson1.getHomeAddress().setCity("Boston");
        // NewPerson1.getHomeAddress().setState("MA");
-       // NewPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
+        NewPerson1.getHomeAddress().setStreetAddress("204 Huntington Ave");
         NewPerson1.getHomeAddress().setZipCode(21350L);
        // NewPerson1.getHomeAddress().setPhoneNumber("7637765763");
+       
+        Person NewPerson2 =personDirectory.addPerson();
+        NewPerson2.setFirstName("Ryan");
+        NewPerson2.setLastName("Reynolds");
+        NewPerson2.getHomeAddress().setCity("NewYork");
+        NewPerson2.getWorkAddress().setCity("NewYork");
+        NewPerson2.getWorkAddress().setStreetAddress("123 Manhattan st");
+        NewPerson2.getHomeAddress().setStreetAddress("890 Manhattan st");
+        NewPerson2.getHomeAddress().setZipCode(11111L);
+        NewPerson2.getWorkAddress().setZipCode(22222L);
+        
+        Person NewPerson3 =personDirectory.addPerson();
+        NewPerson3.setFirstName("Tony");
+        NewPerson3.setLastName("Stark");
+        NewPerson3.getHomeAddress().setCity("Dallas");
+        NewPerson3.getWorkAddress().setCity("NewYork");
+        NewPerson3.getWorkAddress().setStreetAddress("456 Park st");
+        NewPerson3.getHomeAddress().setStreetAddress("567 Park st");
+        NewPerson3.getHomeAddress().setZipCode(33333L);
+        NewPerson3.getWorkAddress().setZipCode(44444L);
+        
+        Person NewPerson4 =personDirectory.addPerson();
+        NewPerson4.setFirstName("Timothee");
+        NewPerson4.setLastName("Chalamet");
+        NewPerson4.getHomeAddress().setCity("New York");
+        NewPerson4.getWorkAddress().setCity("NewYork");
+        NewPerson4.getWorkAddress().setStreetAddress("Park Square");
+        NewPerson4.getHomeAddress().setStreetAddress("433 Park Square");
+        NewPerson4.getHomeAddress().setZipCode(33333L);
+        NewPerson4.getWorkAddress().setZipCode(44444L);
         
     }
 }

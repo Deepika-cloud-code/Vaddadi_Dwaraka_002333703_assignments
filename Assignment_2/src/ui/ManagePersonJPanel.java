@@ -25,6 +25,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         initComponents();
         userProcessContainer=container;
         personDirectory=directory;
+        populateTable();
     }
 
     /**
@@ -45,18 +46,21 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         lblManageAccount = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 204));
+
         tblPersons.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 0, 255)));
         tblPersons.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "First Name", "Last Name", "City_Work_Address", "ZipCode_Work", "City_Home_Address", "ZipCode_Home"
+                "Object", "First Name", "Last Name", "City_Work_Address", "ZipCode_Work", "City_Home_Address", "ZipCode_Home"
             }
         ));
         jScrollPane1.setViewportView(tblPersons);
 
         btnSearch.setBackground(new java.awt.Color(255, 204, 153));
+        btnSearch.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +69,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         });
 
         btnViewDetails.setBackground(new java.awt.Color(255, 204, 153));
+        btnViewDetails.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnViewDetails.setText("View Details");
         btnViewDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +78,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         });
 
         btnDeleteProfile.setBackground(new java.awt.Color(255, 204, 153));
+        btnDeleteProfile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnDeleteProfile.setText("Delete Profile");
         btnDeleteProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +124,9 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
                         .addComponent(txtSearchBox)))
                 .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDeleteProfile, btnSearch, btnViewDetails});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -147,7 +156,7 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
             if(foundPerson!=null){
                 ViewJPanel panel=new ViewJPanel(userProcessContainer,personDirectory,foundPerson);
-                userProcessContainer.add("ViewAccountPanel",panel);
+                userProcessContainer.add("ViewJPanel",panel);
                 CardLayout layout=(CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
             }
@@ -168,10 +177,10 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
         int selectedRow=tblPersons.getSelectedRow();
 
         if(selectedRow>=0){
-            Person selectedAccount=(Person)tblPersons.getValueAt(selectedRow,0);
-
-            ViewJPanel panel=new ViewJPanel(userProcessContainer,personDirectory,selectedAccount);
-            userProcessContainer.add("ViewAccountJPanel",panel);
+            Person selectedPerson=(Person)tblPersons.getValueAt(selectedRow,0);
+            //System.out.println(selectedPerson);
+            ViewJPanel panel=new ViewJPanel(userProcessContainer,personDirectory,selectedPerson);
+            userProcessContainer.add("ViewJPanel",panel);
             CardLayout layout=(CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         }
@@ -187,15 +196,15 @@ public class ManagePersonJPanel extends javax.swing.JPanel {
 
         if(selectedRow>=0){
             int dialogButton=JOptionPane.YES_NO_OPTION;
-            int dialogResult=JOptionPane.showConfirmDialog(null,"Are you sure you want to delete the selected account?","Warning",JOptionPane.WARNING_MESSAGE);
+            int dialogResult=JOptionPane.showConfirmDialog(null,"Are you sure you want to delete the selected profile?","Warning",JOptionPane.WARNING_MESSAGE);
             if(dialogResult==JOptionPane.YES_OPTION){
-                Person selectedAccount=(Person) tblPersons.getValueAt(selectedRow,0);
-                personDirectory.deletePerson(selectedAccount);
+                Person selectedPerson=(Person) tblPersons.getValueAt(selectedRow,0);
+                personDirectory.deletePerson(selectedPerson);
                 populateTable();
             }
         }
         else{
-            JOptionPane.showMessageDialog(null,"Please select an account from the list.","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a profile from the list.","Warning",JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_btnDeleteProfileActionPerformed
@@ -223,7 +232,7 @@ public void populateTable(){
     model.setRowCount(0);
     
     for(Person p:personDirectory.getPerson()){
-        Object[] row=new Object[6];
+        Object[] row=new Object[7];
         row[0]=p;
         row[1]=p.getFirstName();
         row[2]=p.getLastName();
@@ -234,6 +243,9 @@ public void populateTable(){
         
         model.addRow(row);
     }
+tblPersons.getColumnModel().getColumn(0).setMinWidth(0); // to hide the first column
+tblPersons.getColumnModel().getColumn(0).setMaxWidth(0);
+tblPersons.getColumnModel().getColumn(0).setWidth(0);
 }
 
 
