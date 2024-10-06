@@ -10,7 +10,7 @@ package model;
  */
 public class Address {
    private String streetAddress;
-   private String unitNumber;
+   private short unitNumber;
    private String city;
    private String state;
    private Long zipCode;
@@ -24,11 +24,11 @@ public class Address {
         this.streetAddress = streetAddress;
     }
 
-    public String getUnitNumber() {
+    public short getUnitNumber() {
         return unitNumber;
     }
 
-    public void setUnitNumber(String unitNumber) {
+    public void setUnitNumber(short unitNumber) {
         this.unitNumber = unitNumber;
     }
 

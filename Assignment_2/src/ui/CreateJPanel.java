@@ -460,21 +460,21 @@ PersonDirectory personDirectory;
         
         
         String streetAddressWork=txtStreetAddressWork.getText();
-        String unitNumberWork=txtUnitNumberWork.getText();
+        Short unitNumberWork;
         String cityWork=txtCityWork.getText();
         String stateWork=txtStateWork.getText();
         //String zipCodeWork=txtZipCodeWork.getText();
         String phoneNumberWork=txtPhoneNumberWork.getText();
         
         String streetAddressHome=txtStreetAddressHome.getText();
-        String unitNumberHome=txtUnitNumberHome.getText();
+        Short unitNumberHome;
         String cityHome=txtCityHome.getText();
         String stateHome=txtStateHome.getText();
         //String zipCodeWork=txtZipCodeWork.getText();
         String phoneNumberHome=txtPhoneNumberHome.getText();
         
-        if(firstName.isBlank() || lastName.isBlank() || SSN.isBlank()|| streetAddressWork.isBlank()|| unitNumberWork.isBlank()|| cityWork.isBlank()
-                || stateWork.isBlank()|| phoneNumberWork.isBlank()|| streetAddressHome.isBlank()|| unitNumberHome.isBlank()|| cityHome.isBlank()
+        if(firstName.isBlank() || lastName.isBlank() || SSN.isBlank()|| streetAddressWork.isBlank()|| cityWork.isBlank()
+                || stateWork.isBlank()|| phoneNumberWork.isBlank()|| streetAddressHome.isBlank()|| cityHome.isBlank()
                 || stateHome.isBlank()|| phoneNumberHome.isBlank()){
             JOptionPane.showMessageDialog(this,"All fields are mandatory.","Error",JOptionPane.ERROR_MESSAGE);
             //PAUSE UNTIL THE USER CLOSES THE DIALOG.
@@ -484,11 +484,13 @@ PersonDirectory personDirectory;
            age=Integer.parseInt(txtAge.getText());
            zipCodeWork=Long.parseLong(txtZipCodeWork.getText());
            zipCodeHome=Long.parseLong(txtZipCodeHome.getText());
+           unitNumberWork=Short.parseShort(txtUnitNumberWork.getText());
+           unitNumberHome=Short.parseShort(txtUnitNumberHome.getText());
            gender=txtGender.getText().charAt(0);
             
             
         }catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Please enter valid age,zipcodes and Gender(M for male, F for Female and O for Others) as input.","Warning",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Please enter valid age,zipcodes,Unit Number and Gender(M for male, F for Female and O for Others) as input.","Warning",JOptionPane.WARNING_MESSAGE);
             return;
         }
       
@@ -506,7 +508,7 @@ PersonDirectory personDirectory;
        p.getHomeAddress().setPhoneNumber(phoneNumberHome);
        p.getHomeAddress().setState(stateHome);
        p.getHomeAddress().setZipCode(zipCodeHome);
-       p.getHomeAddress().setUnitNumber(unitNumberHome);
+       
         p.getWorkAddress().setCity(cityWork);
        p.getWorkAddress().setStreetAddress(streetAddressWork);
        p.getWorkAddress().setPhoneNumber(phoneNumberWork);

@@ -160,8 +160,8 @@ public class MainJFrame extends javax.swing.JFrame {
         newPerson.getHomeAddress().setCity("Boston");
         newPerson.getHomeAddress().setStreetAddress("103 Huntington Ave");
         newPerson.getHomeAddress().setZipCode(21340L);
-         newPerson.getHomeAddress().setUnitNumber("988");
-         newPerson.getWorkAddress().setUnitNumber("110");
+         newPerson.getHomeAddress().setUnitNumber((short)988);
+         newPerson.getWorkAddress().setUnitNumber((short)110);
        
         
          Person newPerson1 =personDirectory.addPerson();
@@ -173,8 +173,8 @@ public class MainJFrame extends javax.swing.JFrame {
         newPerson1.getWorkAddress().setState("MA"); 
         newPerson1.getHomeAddress().setPhoneNumber("4767765763");
          newPerson1.getWorkAddress().setPhoneNumber("09334567890");
-         newPerson1.getHomeAddress().setUnitNumber("211");
-         newPerson1.getWorkAddress().setUnitNumber("655");
+         newPerson1.getHomeAddress().setUnitNumber((short)211);
+         newPerson1.getWorkAddress().setUnitNumber((short)311);
          newPerson1.getHomeAddress().setState("MA");
         newPerson1.getWorkAddress().setCity("Boston");
         newPerson1.getWorkAddress().setStreetAddress("123 tremont st");
@@ -199,8 +199,8 @@ public class MainJFrame extends javax.swing.JFrame {
         NewPerson2.getHomeAddress().setPhoneNumber("2737765763");
         NewPerson2.getWorkAddress().setPhoneNumber("7434567890");
         NewPerson2.getHomeAddress().setState("MA");
-        NewPerson2.getHomeAddress().setUnitNumber("340");
-        NewPerson2.getWorkAddress().setUnitNumber("100");
+        NewPerson2.getHomeAddress().setUnitNumber((short)61);
+        NewPerson2.getWorkAddress().setUnitNumber((short)271);
         
         Person NewPerson3 =personDirectory.addPerson();
         NewPerson3.setFirstName("Tony");
@@ -218,8 +218,8 @@ public class MainJFrame extends javax.swing.JFrame {
         NewPerson3.getHomeAddress().setPhoneNumber("9837765763");
         NewPerson3.getWorkAddress().setPhoneNumber("1234567890");
         NewPerson3.getHomeAddress().setState("MA");
-        NewPerson3.getHomeAddress().setUnitNumber("544");
-        NewPerson3.getWorkAddress().setUnitNumber("122");
+        NewPerson3.getHomeAddress().setUnitNumber((short)111);
+        NewPerson3.getWorkAddress().setUnitNumber((short)411);
         
         Person NewPerson4 =personDirectory.addPerson();
         NewPerson4.setFirstName("Timothee");
@@ -237,8 +237,8 @@ public class MainJFrame extends javax.swing.JFrame {
        NewPerson4.getHomeAddress().setPhoneNumber("67456324645");
        NewPerson4.getWorkAddress().setPhoneNumber("89234778235");
        NewPerson4.getHomeAddress().setState("MA");
-       NewPerson4.getHomeAddress().setUnitNumber("322");
-       NewPerson4.getWorkAddress().setUnitNumber("910");
+       NewPerson4.getHomeAddress().setUnitNumber((short)411);
+       NewPerson4.getWorkAddress().setUnitNumber((short)461);
         
     }
 }

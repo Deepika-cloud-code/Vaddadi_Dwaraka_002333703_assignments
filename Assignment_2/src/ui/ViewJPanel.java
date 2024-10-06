@@ -526,13 +526,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         String cityHome=txtCityHome.getText();
         String cityWork=txtCityWork.getText();
         String streetAddressHome=txtStreetAddressHome.getText();
-        String unitNumberHome=txtUnitNumberHome.getText();
+        Short unitNumberHome=Short.parseShort(txtUnitNumberHome.getText());
         String phoneNumberHome=txtPhoneNumberHome.getText();
         
         String stateWork=txtStateWork.getText();
         String stateHome=txtStateHome.getText();
         String streetAddressWork=txtStreetAddressWork.getText();
-        String unitNumberWork=txtUnitNumberWork.getText();
+        Short unitNumberWork=Short.parseShort(txtUnitNumberWork.getText());
         String phoneNumberWork=txtPhoneNumberWork.getText();
         
         
@@ -661,8 +661,8 @@ public class ViewJPanel extends javax.swing.JPanel {
          txtZipCodeWork.setText(Long.toString(person.getWorkAddress().getZipCode()));
          txtStateHome.setText(person.getHomeAddress().getState());
          txtStateWork.setText(person.getWorkAddress().getState());
-          txtUnitNumberHome.setText(person.getHomeAddress().getUnitNumber());
-         txtUnitNumberWork.setText(person.getWorkAddress().getUnitNumber());
+          txtUnitNumberHome.setText(Short.toString(person.getHomeAddress().getUnitNumber()));
+         txtUnitNumberWork.setText(Short.toString(person.getWorkAddress().getUnitNumber()));
           txtStreetAddressHome.setText(person.getHomeAddress().getStreetAddress());
          txtStreetAddressWork.setText(person.getWorkAddress().getStreetAddress());
           txtPhoneNumberHome.setText(person.getHomeAddress().getPhoneNumber());
