@@ -126,6 +126,64 @@ public class Info5001UniversityExample {
         Student_ID_List.add("stu8");
         Student_ID_List.add("stu9");
         Student_ID_List.add("stu10");
+        
+         for(int i=0;i<10;i++){
+            PersonDirectory pd = department.getPersonDirectory();
+            Person student = pd.newPerson(Student_ID_List.get(i));
+            StudentDirectory sd = department.getStudentDirectory();
+            StudentProfile studentprofile = sd.newStudentProfile(student);
+            CourseLoad courseload = studentprofile.newCourseLoad("Fall2024");
+            //1st registration of course by a student
+            Seat seat=new Seat(CO_List.get(0), 10);
+            SeatAssignment sa=new SeatAssignment(courseload, seat);
+            sa.GetCourseStudentScore();
+            //register student in class
+            courseload.newSeatAssignment(CO_List.get(0)); 
+            courseload.registerStudent(sa);
+            int credit_1=sa.getCreditHours();
+            int price1=course.getCoursePrice();
+            //System.out.println(sa.getCreditHours());
+            //2nd registration of course by a student
+            seat=new Seat(CO_List.get(i), 10);
+            sa=new SeatAssignment(courseload, seat);
+            sa.GetCourseStudentScore();
+            courseload.newSeatAssignment(CO_List.get(i)); //register student in class
+            courseload.newSeatAssignment(CO_List.get(i));
+            courseload.registerStudent(sa);
+            int credit_2=sa.getCreditHours();
+            int price2=course.getCoursePrice();
+            double min = 0.001;
+            double max = 0.005;
+            //generating random values between 0.001 and 0.005 and adding it to grades, 
+            //to generate different grades to different students
+            double randomValue = min + (Math.random() * (max - min));
+            sa.grade=(double)3.80+randomValue;
+            double grade1=sa.grade;
+            sa.grade=(float)3.90+randomValue;
+            double grade2=sa.grade;
+            
+            System.out.println("Student"+" "+(i+1)+" Details:");
+            System.out.println("-----------------");
+            System.out.println("StudentID:"+student.getPersonName());
+            if(i==0){
+                System.out.println("Courses Taken:"+CO_List.get(0).getSubjectCourse().getCourseName()+" & "+CO_List.get(i+2).getSubjectCourse().getCourseName());
+            }
+            else{
+                System.out.println("Courses Taken:"+CO_List.get(0).getSubjectCourse().getCourseName()+" & "+CO_List.get(i).getSubjectCourse().getCourseName());
+            }
+            if(i==0)
+                System.out.println("Faculty handling the courses:"+FP_List.get(0).getPerson().getPersonName()+" and "+FP_List.get(2).getPerson().getPersonName()+" respectively.");
+            else
+                System.out.println("Faculty handling the courses:"+FP_List.get(0).getPerson().getPersonName()+" and "+FP_List.get(i).getPerson().getPersonName()+" respectively.");
+               
+            System.out.println("Grade Obtained in "+CO_List.get(i).getSubjectCourse().getCourseName()+" is "+grade1);
+            System.out.println("Grade Obtained in "+CO_List.get(i).getSubjectCourse().getCourseName()+" is "+grade2);
+            System.out.println("Average CGPA for semester :"+(grade1+grade2)/2);
+            System.out.println("credit hours for both respectively are :"+credit_1+" & "+credit_2);
+            System.out.println("Course price per credit hour:"+course.price);
+            System.out.println("Tuition fees for the semester: "+(price1+price2));
+            System.out.println("==========================================================");
+        }
 
     }
 
