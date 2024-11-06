@@ -141,7 +141,7 @@ public class Info5001UniversityExample {
             courseload.newSeatAssignment(CO_List.get(0)); 
             courseload.registerStudent(sa);
             int credit_1=sa.getCreditHours();
-            int price1=course.getCoursePrice();
+            int price1=coursecatalog.courselist.get(0).getCoursePrice();
             //System.out.println(sa.getCreditHours());
             //2nd registration of course by a student
             seat=new Seat(CO_List.get(i), 10);
@@ -151,7 +151,11 @@ public class Info5001UniversityExample {
             courseload.newSeatAssignment(CO_List.get(i));
             courseload.registerStudent(sa);
             int credit_2=sa.getCreditHours();
-            int price2=course.getCoursePrice();
+            int price2=0;
+            if(i==0)
+                price2=coursecatalog.courselist.get(2).getCoursePrice();
+            else 
+                price2=coursecatalog.courselist.get(i).getCoursePrice();
             double min = 0.001;
             double max = 0.005;
             //generating random values between 0.001 and 0.005 and adding it to grades, 
