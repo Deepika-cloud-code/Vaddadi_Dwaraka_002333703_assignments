@@ -112,6 +112,20 @@ public class Info5001UniversityExample {
             System.out.println("Faculty professor "+faculty_Name_List.get(i)+" teaches this course:"+coursecatalog.courselist.get(i).getCourseName());
         }
         System.out.println();
+        
+         
+        //Manage student course registrations. Students register for classes.
+        ArrayList<String> Student_ID_List=new ArrayList<>();
+        Student_ID_List.add("stu1");
+        Student_ID_List.add("stu2");
+        Student_ID_List.add("stu3");
+        Student_ID_List.add("stu4");
+        Student_ID_List.add("stu5");
+        Student_ID_List.add("stu6");
+        Student_ID_List.add("stu7");
+        Student_ID_List.add("stu8");
+        Student_ID_List.add("stu9");
+        Student_ID_List.add("stu10");
 
     }
 
