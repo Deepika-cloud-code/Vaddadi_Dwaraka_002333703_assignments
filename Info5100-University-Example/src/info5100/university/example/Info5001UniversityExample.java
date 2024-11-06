@@ -59,6 +59,24 @@ public class Info5001UniversityExample {
         coursecatalog.addCourse(course8);
         coursecatalog.addCourse(course9);
     
+         Degree degree=new Degree("Masters");
+        degree.addCoreCourse(course);
+        degree.addElectiveCourse(course7);
+        degree.addElectiveCourse(course1);
+        degree.addElectiveCourse(course2);
+        degree.addElectiveCourse(course3);
+        degree.addElectiveCourse(course4);
+        degree.addElectiveCourse(course5);
+        degree.addElectiveCourse(course6);
+        degree.addElectiveCourse(course8);
+        degree.addElectiveCourse(course9);
+        
+        System.out.println("This is the core course:\n"+course.getCourseName());
+        System.out.println("These are the elective courses:");
+        for(int i=0;i<9;i++){
+        System.out.println(degree.getElectiveList().get(i).getCourseName());
+        }//tried using the arrayList that is already defined in the degree class
+        System.out.println();
 
     }
 
