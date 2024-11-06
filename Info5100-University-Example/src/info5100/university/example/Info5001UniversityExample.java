@@ -77,6 +77,41 @@ public class Info5001UniversityExample {
         System.out.println(degree.getElectiveList().get(i).getCourseName());
         }//tried using the arrayList that is already defined in the degree class
         System.out.println();
+        
+          
+        //Manage the course schedule: Create course schedule for new semester,
+        //add course offers for courses, and assign teachers.
+        ArrayList<String> faculty_Name_List=new ArrayList<>();
+        faculty_Name_List.add("Daniel");
+        faculty_Name_List.add("Tom");
+        faculty_Name_List.add("Peters");
+        faculty_Name_List.add("Hayley");
+        faculty_Name_List.add("Leela");
+        faculty_Name_List.add("Harry");
+        faculty_Name_List.add("Liam");
+        faculty_Name_List.add("Harry");
+        faculty_Name_List.add("Daniel");
+        faculty_Name_List.add("Leela");
+        
+        CourseSchedule courseschedule=department.newCourseSchedule("Fall2024");
+        CourseOffer courseoffer=courseschedule.newCourseOffer("123");
+        Person person=new Person("null");
+        FacultyProfile fp=new FacultyProfile(person);
+        ArrayList<FacultyProfile> FP_List=new ArrayList<FacultyProfile>();
+        ArrayList<String> FC_List=new ArrayList<>();
+        ArrayList<CourseOffer> CO_List=new ArrayList<CourseOffer>();
+        for(int i=0;i<10;i++){
+            courseschedule = department.newCourseSchedule("Fall2024");
+            courseoffer = courseschedule.newCourseOffer(coursecatalog.courselist.get(i).getCOurseNumber());//parameter returns INFO5100
+            CO_List.add(courseoffer);
+            person=new Person(faculty_Name_List.get(i));
+            fp=new FacultyProfile(person);
+            FP_List.add(fp);
+            FacultyAssignment fa=fp.AssignAsTeacher(courseoffer);
+            FC_List.add(fa.getFacultyProfile().getPerson().getPersonName());
+            System.out.println("Faculty professor "+faculty_Name_List.get(i)+" teaches this course:"+coursecatalog.courselist.get(i).getCourseName());
+        }
+        System.out.println();
 
     }
 
