@@ -39,9 +39,9 @@ public class Info5001UniversityExample {
         
         //Manage the course catalog: browse and add courses
         Course course = coursecatalog.newCourse("Application Engineering", "info 5100", 4);
-        Course course1 = coursecatalog.newCourse("OOPS", "info 5101", 4);
+        Course course1 = coursecatalog.newCourse("OOPS", "info 5101", 3);
         Course course2= coursecatalog.newCourse("Cloud", "info 5102", 4);
-        Course course3 = coursecatalog.newCourse("Python", "info 5103", 4);
+        Course course3 = coursecatalog.newCourse("Python", "info 5103", 1);
         Course course4 = coursecatalog.newCourse("PromptEngg", "info 5104", 3);
         Course course5 = coursecatalog.newCourse("BigData", "info 5105", 4);
         Course course6 = coursecatalog.newCourse("DMDD", "info 5106", 4);
@@ -127,6 +127,9 @@ public class Info5001UniversityExample {
         Student_ID_List.add("stu9");
         Student_ID_List.add("stu10");
         
+        
+        
+         courseoffer.generatSeats(20);
          for(int i=0;i<10;i++){
             PersonDirectory pd = department.getPersonDirectory();
             Person student = pd.newPerson(Student_ID_List.get(i));
@@ -134,7 +137,7 @@ public class Info5001UniversityExample {
             StudentProfile studentprofile = sd.newStudentProfile(student);
             CourseLoad courseload = studentprofile.newCourseLoad("Fall2024");
             //1st registration of course by a student
-            Seat seat=new Seat(CO_List.get(0), 10);
+            Seat seat=new Seat(CO_List.get(0), 20);
             SeatAssignment sa=new SeatAssignment(courseload, seat);
             sa.GetCourseStudentScore();
             //register student in class
@@ -165,7 +168,15 @@ public class Info5001UniversityExample {
             double grade1=sa.grade;
             sa.grade=(float)3.90+randomValue;
             double grade2=sa.grade;
+            //(Letter grade mappings: A=4.0, A-=3.7, B+=3.3, B=3.0, )
+            String Grade_Letter;
+            if((grade1+grade2)/2<=4 && (grade1+grade2/2)>3.85) Grade_Letter="A";
+            else if((grade1+grade2)/2<=3.85 && (grade1+grade2/2)>3.5) Grade_Letter="A-";
+            else if((grade1+grade2)/2<=3.5 && (grade1+grade2/2)>3.3) Grade_Letter="B";
+            else if((grade1+grade2)/2<=3.3 && (grade1+grade2/2)>3.0) Grade_Letter="B-";
+            else Grade_Letter="F";
             
+                
             System.out.println("Student"+" "+(i+1)+" Details:");
             System.out.println("-----------------");
             System.out.println("StudentID:"+student.getPersonName());
@@ -180,8 +191,12 @@ public class Info5001UniversityExample {
             else
                 System.out.println("Faculty handling the courses:"+FP_List.get(0).getPerson().getPersonName()+" and "+FP_List.get(i).getPerson().getPersonName()+" respectively.");
                
-            System.out.println("Grade Obtained in "+CO_List.get(i).getSubjectCourse().getCourseName()+" is "+grade1);
+            System.out.println("Grade Obtained in "+CO_List.get(0).getSubjectCourse().getCourseName()+" is "+grade1);
+            if(i==0)
+            System.out.println("Grade Obtained in "+CO_List.get(2).getSubjectCourse().getCourseName()+" is "+grade2);
+            else
             System.out.println("Grade Obtained in "+CO_List.get(i).getSubjectCourse().getCourseName()+" is "+grade2);
+            System.out.println("Grade Letter obtained is :"+Grade_Letter);
             System.out.println("Average CGPA for semester :"+(grade1+grade2)/2);
             System.out.println("credit hours for both respectively are :"+credit_1+" & "+credit_2);
             System.out.println("Course price per credit hour:"+course.price);
